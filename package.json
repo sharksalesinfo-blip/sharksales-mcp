@@ -1,0 +1,37 @@
+{
+  "name": "sharksales-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for querying the SharkSales knowledge base about online marketing expertise and services",
+  "main": "index.js",
+  "bin": {
+    "sharksales-mcp": "./index.js"
+  },
+  "type": "module",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sharksales",
+    "online-marketing",
+    "claude",
+    "ai"
+  ],
+  "author": "Sjoerd van Tilburg <info@sharksales.nl>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharksalesinfo-blip/sharksales-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sharksalesinfo-blip/sharksales-mcp/issues"
+  },
+  "homepage": "https://github.com/sharksalesinfo-blip/sharksales-mcp#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
