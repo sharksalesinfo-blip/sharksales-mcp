@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #0a0e14;
+  --bg-alt: #11161e;
+  --surface: #161c26;
+  --border: #222a36;
+  --text: #f5f3ef;
+  --text-muted: #9ba3b0;
+  --text-dim: #6b7280;
+  --accent: #d4b88a;
+}
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Helvetica Neue', system-ui, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+button:hover { opacity: 0.92; }
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4b88a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px !important;
+}
+
+input::placeholder, textarea::placeholder { color: var(--text-dim); }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+
+/* ===== Responsive helpers ===== */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+.section-pad { padding: 96px 48px; }
+.section-pad-sm { padding: 96px 48px 64px; }
+.grid-2, .grid-3, .grid-4 { display: grid; gap: 24px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.split { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
+.split-rev { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; }
+.split-form { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; }
+.split-filter { display: grid; grid-template-columns: 280px 1fr; gap: 48px; }
+.split-brand { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0; }
+.split-brand.rev { grid-template-columns: 1fr 1.4fr; }
+.split-model { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.hero-pad { padding: 0 48px; padding-bottom: 80px; }
+.hero-h1 { font-size: clamp(44px, 8vw, 84px); line-height: 1.02; }
+.hero-h1-xl { font-size: clamp(48px, 10vw, 110px); }
+.hero-h1-md { font-size: clamp(40px, 7vw, 78px); }
+.section-h2 { font-size: clamp(32px, 5vw, 46px); }
+.section-h2-lg { font-size: clamp(36px, 6vw, 54px); }
+.model-h3 { font-size: clamp(28px, 4.5vw, 42px); }
+.nav-desktop { display: flex; gap: 36px; align-items: center; }
+.nav-mobile-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.services-grid > div + div { border-left: 1px solid var(--border); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+.yacht-meta { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+
+@media (max-width: 960px) {
+  .container, .hero-pad { padding-left: 32px; padding-right: 32px; }
+  .section-pad { padding: 72px 32px; }
+  .section-pad-sm { padding: 72px 32px 48px; }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .split, .split-rev, .split-form, .split-filter { grid-template-columns: 1fr; gap: 40px; }
+  .split-brand, .split-brand.rev, .split-model { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid > div + div { border-left: none; border-top: 1px solid var(--border); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 640px) {
+  .container, .hero-pad { padding-left: 20px; padding-right: 20px; }
+  .section-pad { padding: 56px 20px; }
+  .section-pad-sm { padding: 56px 20px 40px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 20px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .specs-grid { grid-template-columns: 1fr; }
+  .nav-desktop { display: none; }
+  .nav-mobile-toggle { display: block; }
+  .hero-pad { padding-bottom: 48px !important; }
+  .yacht-meta { gap: 12px; font-size: 12px; }
+}
